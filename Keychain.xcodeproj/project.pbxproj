@@ -33,10 +33,10 @@
 		639CB58214EDBB84005AF3E5 /* KeychainAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainAppDelegate.h; sourceTree = "<group>"; };
 		639CB58314EDBB84005AF3E5 /* KeychainAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeychainAppDelegate.m; sourceTree = "<group>"; };
 		639CB58614EDBB84005AF3E5 /* Keychain.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Keychain.xcdatamodel; sourceTree = "<group>"; };
-		639CB58914EDBB85005AF3E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		639CB58B14EDBB85005AF3E5 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		639CB58C14EDBB85005AF3E5 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		639CB58F14EDBB85005AF3E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		639CB5AF14EE8F95005AF3E5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		639CB5B014EE8FA9005AF3E5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/RootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +142,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = 639CB56214EDBB84005AF3E5;
 			productRefGroup = 639CB56E14EDBB84005AF3E5 /* Products */;
@@ -192,7 +193,7 @@
 		639CB58814EDBB85005AF3E5 /* MainWindow.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				639CB58914EDBB85005AF3E5 /* en */,
+				639CB5AF14EE8F95005AF3E5 /* fr */,
 			);
 			name = MainWindow.xib;
 			sourceTree = "<group>";
@@ -200,7 +201,7 @@
 		639CB58E14EDBB85005AF3E5 /* RootViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				639CB58F14EDBB85005AF3E5 /* en */,
+				639CB5B014EE8FA9005AF3E5 /* fr */,
 			);
 			name = RootViewController.xib;
 			sourceTree = "<group>";
@@ -292,6 +293,7 @@
 				639CB59514EDBB85005AF3E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
