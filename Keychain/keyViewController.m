@@ -20,6 +20,8 @@
 	self.urlField.text = [self.key valueForKey:@"url"];
     self.loginField.text = [self.key valueForKey:@"login"];
     self.passwordField.text = [self.key valueForKey:@"password"];
+    
+    [self.navigationItem setValue:[self.key valueForKey:@"name"] forKey:@"title"];
 }
 
 
