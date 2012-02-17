@@ -6,13 +6,13 @@
 //  Copyright 2012 ENSISA. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "KeysViewController.h"
 
-@interface RootViewController ()
+@interface KeysViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
-@implementation RootViewController
+@implementation KeysViewController
 
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;

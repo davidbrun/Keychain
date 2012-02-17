@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 
-@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface KeysViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;

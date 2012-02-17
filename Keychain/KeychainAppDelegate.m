@@ -8,7 +8,7 @@
 
 #import "KeychainAppDelegate.h"
 
-#import "RootViewController.h"
+#import "KeysViewController.h"
 
 @implementation KeychainAppDelegate
 
@@ -75,7 +75,7 @@
 
 - (void)awakeFromNib
 {
-    RootViewController *rootViewController = (RootViewController *)[self.navigationController topViewController];
+    KeysViewController *rootViewController = (KeysViewController *)[self.navigationController topViewController];
     rootViewController.managedObjectContext = self.managedObjectContext;
 }
 
