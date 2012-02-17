@@ -19,5 +19,6 @@
 - (IBAction)createKey:(id)sender;
 - (void)removeKey:(NSManagedObject *)key;
 - (NSArray *)allKeys;
+- (void) refreshTableView;
 
 @end

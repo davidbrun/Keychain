@@ -16,23 +16,24 @@
 @synthesize keyViewController;
 
 
-- (void)pushKeyViewController:(NSManagedObject *)key{
+- (void)pushKeyViewController:(NSManagedObject *)key
+{
 	if(self.keyViewController == nil)
 		self.keyViewController = [[keyViewController alloc] initWithNibName:@"KeyViewController" bundle:nil];
 	self.keyViewController.key = key;
 	[self.navigationController pushViewController:self.keyViewController animated:YES];
-	
 }
 
 
 
-- (IBAction)createKey:(id)sender {
+- (IBAction)createKey:(id)sender
+{
 	KeychainAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	NSManagedObject *key = [NSEntityDescription insertNewObjectForEntityForName:@"Key" inManagedObjectContext:context];
     [key setValue:@"Nouvelle clé" forKey:@"name"];
-    
-    [self refreshTableView];
+    [self pushKeyViewController:key];
+    //[self refreshTableView];
 }
 
 
@@ -166,8 +167,12 @@
 	
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Key" inManagedObjectContext:context];
 	
-	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    [sortDescriptor release];
 	
 	NSError *error;
 	NSArray *objects =[context executeFetchRequest:request error:&error];
