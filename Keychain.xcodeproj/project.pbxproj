@@ -17,6 +17,8 @@
 		639CB58A14EDBB85005AF3E5 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639CB58814EDBB85005AF3E5 /* MainWindow.xib */; };
 		639CB58D14EDBB85005AF3E5 /* KeysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639CB58C14EDBB85005AF3E5 /* KeysViewController.m */; };
 		639CB59014EDBB85005AF3E5 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639CB58E14EDBB85005AF3E5 /* RootViewController.xib */; };
+		63DC47A814EE9AA8002B60C7 /* keyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC47A614EE9AA8002B60C7 /* keyViewController.m */; };
+		63DC47A914EE9AA8002B60C7 /* keyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DC47A714EE9AA8002B60C7 /* keyViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,9 @@
 		639CB58C14EDBB85005AF3E5 /* KeysViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeysViewController.m; sourceTree = "<group>"; };
 		639CB5AF14EE8F95005AF3E5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		639CB5B014EE8FA9005AF3E5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		63DC47A514EE9AA8002B60C7 /* keyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keyViewController.h; sourceTree = "<group>"; };
+		63DC47A614EE9AA8002B60C7 /* keyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keyViewController.m; sourceTree = "<group>"; };
+		63DC47A714EE9AA8002B60C7 /* keyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = keyViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +96,9 @@
 				639CB58E14EDBB85005AF3E5 /* RootViewController.xib */,
 				639CB58514EDBB84005AF3E5 /* Keychain.xcdatamodeld */,
 				639CB57A14EDBB84005AF3E5 /* Supporting Files */,
+				63DC47A514EE9AA8002B60C7 /* keyViewController.h */,
+				63DC47A614EE9AA8002B60C7 /* keyViewController.m */,
+				63DC47A714EE9AA8002B60C7 /* keyViewController.xib */,
 			);
 			path = Keychain;
 			sourceTree = "<group>";
@@ -158,6 +166,7 @@
 			files = (
 				639CB58A14EDBB85005AF3E5 /* MainWindow.xib in Resources */,
 				639CB59014EDBB85005AF3E5 /* RootViewController.xib in Resources */,
+				63DC47A914EE9AA8002B60C7 /* keyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +181,7 @@
 				639CB58414EDBB84005AF3E5 /* KeychainAppDelegate.m in Sources */,
 				639CB58714EDBB85005AF3E5 /* Keychain.xcdatamodeld in Sources */,
 				639CB58D14EDBB85005AF3E5 /* KeysViewController.m in Sources */,
+				63DC47A814EE9AA8002B60C7 /* keyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
