@@ -24,4 +24,7 @@
 @property (nonatomic,retain) IBOutlet UITextField *passwordField;
 @property (nonatomic,retain) NSManagedObject *key;
 
+- (IBAction)textFieldDoneEditing:(id)sender;
+- (IBAction)backgroundTap:(id)sender;
+
 @end

@@ -30,6 +30,19 @@
     [self.key setValue:self.passwordField.text forKey:@"password"];
 }
 
+- (IBAction)textFieldDoneEditing:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+- (IBAction)backgroundTap:(id)sender
+{
+    [nameField resignFirstResponder];
+    [urlField resignFirstResponder];
+    [loginField resignFirstResponder];
+    [passwordField resignFirstResponder];
+}
+
 
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

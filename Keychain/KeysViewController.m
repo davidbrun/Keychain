@@ -159,7 +159,7 @@
     [super dealloc];
 }
 
--(NSArray *)allKeys
+- (NSArray *)allKeys
 {
 	KeychainAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
@@ -177,7 +177,7 @@
 	return objects;
 }
 
--(void)removeKey:(NSManagedObject *)key
+- (void)removeKey:(NSManagedObject *)key
 {
     KeychainAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];

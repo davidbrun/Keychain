@@ -15,5 +15,9 @@
 }
 
 @property (nonatomic,retain) keyViewController * keyViewController;
+
 - (IBAction)createKey:(id)sender;
+- (void)removeKey:(NSManagedObject *)key;
+- (NSArray *)allKeys;
+
 @end
