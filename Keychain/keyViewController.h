@@ -6,7 +6,7 @@
 //  Copyright 2012 ENSISA. All rights reserved.
 //
 
-
+#import <UIKit/UIKit.h>
 
 @interface keyViewController : UIViewController {
 
@@ -22,6 +22,6 @@
 @property (nonatomic,retain) IBOutlet UITextField *urlField;
 @property (nonatomic,retain) IBOutlet UITextField *loginField;
 @property (nonatomic,retain) IBOutlet UITextField *passwordField;
-@property (nonatomic,retain) NSManagedObject *key;//pointera vers l'objet persistant qu'on modifie
+@property (nonatomic,retain) NSManagedObject *key;
 
 @end

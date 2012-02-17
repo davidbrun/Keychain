@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import <CoreData/CoreData.h>
+@class keyViewController;
 
-@interface KeysViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface KeysViewController : UITableViewController {
+	keyViewController *keyViewController;
+}
 
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-
+@property (nonatomic,retain) keyViewController * keyViewController;
+- (IBAction)createKey:(id)sender;
 @end

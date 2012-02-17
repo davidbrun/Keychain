@@ -58,11 +58,24 @@
     // Do any additional setup after loading the view from its nib.
 }
 */
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	self.nameField = nil;
+	self.urlField = nil;
+    self.loginField = nil;
+    self.passwordField = nil;
+}
+
+
+- (void)dealloc {
+	[nameField release];
+	[urlField release];
+    [loginField release];
+    [passwordField release];
+	[key release];
+    [super dealloc];
 }
 /*
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

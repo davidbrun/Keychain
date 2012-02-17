@@ -22,7 +22,8 @@
 {
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
-    self.window.rootViewController = self.navigationController;
+    [self.window addSubview:_navigationController.view];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -41,6 +42,7 @@
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
+    [self saveContext];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -63,22 +65,13 @@
     [self saveContext];
 }
 
-- (void)dealloc
-{
-    [_window release];
-    [__managedObjectContext release];
-    [__managedObjectModel release];
-    [__persistentStoreCoordinator release];
-    [_navigationController release];
-    [super dealloc];
-}
-
+/*
 - (void)awakeFromNib
 {
     KeysViewController *rootViewController = (KeysViewController *)[self.navigationController topViewController];
     rootViewController.managedObjectContext = self.managedObjectContext;
 }
-
+*/
 - (void)saveContext
 {
     NSError *error = nil;
@@ -191,5 +184,26 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    /*
+     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
+     */
+}
+
+
+- (void)dealloc
+{
+	[_navigationController release];
+    [__managedObjectContext release];
+    [__managedObjectModel release];
+    [__persistentStoreCoordinator release];
+    
+    [_window release];
+    [super dealloc];
+}
+
 
 @end
