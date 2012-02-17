@@ -116,18 +116,16 @@
     return YES;
 }
 */
-/*
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
+        [self removeKey:[[self allKeys] objectAtIndex:[indexPath row]]];
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
-*/
+
+
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // The table view should not be re-orderable.
@@ -163,7 +161,6 @@
 
 -(NSArray *)allKeys
 {
-	//pr accéder au contexte de référence
 	KeychainAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	
@@ -178,6 +175,13 @@
 		NSLog(@"There was an error");
 	}
 	return objects;
+}
+
+-(void)removeKey:(NSManagedObject *)key
+{
+    KeychainAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+	NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    [context deleteObject:key];
 }
 
 - (void) refreshTableView
