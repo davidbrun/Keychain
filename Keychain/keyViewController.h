@@ -25,5 +25,7 @@
 
 - (IBAction)textFieldDoneEditing:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
+- (IBAction)buttonGenerateTouch:(id)sender;
+- (NSString *)generateKeyOfLength:(int)len;
 
 @end

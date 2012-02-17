@@ -16,6 +16,11 @@
 		639CB58714EDBB85005AF3E5 /* Keychain.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 639CB58514EDBB84005AF3E5 /* Keychain.xcdatamodeld */; };
 		639CB58A14EDBB85005AF3E5 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639CB58814EDBB85005AF3E5 /* MainWindow.xib */; };
 		639CB58D14EDBB85005AF3E5 /* KeysViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639CB58C14EDBB85005AF3E5 /* KeysViewController.m */; };
+		63AE2F9414EEE2AF001E2A18 /* bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AE2F8F14EEE2AF001E2A18 /* bank.png */; };
+		63AE2F9514EEE2AF001E2A18 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AE2F9014EEE2AF001E2A18 /* email.png */; };
+		63AE2F9614EEE2AF001E2A18 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AE2F9114EEE2AF001E2A18 /* game.png */; };
+		63AE2F9714EEE2AF001E2A18 /* keychain.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AE2F9214EEE2AF001E2A18 /* keychain.png */; };
+		63AE2F9814EEE2AF001E2A18 /* shopping.png in Resources */ = {isa = PBXBuildFile; fileRef = 63AE2F9314EEE2AF001E2A18 /* shopping.png */; };
 		63DC47A814EE9AA8002B60C7 /* keyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC47A614EE9AA8002B60C7 /* keyViewController.m */; };
 		63DC47A914EE9AA8002B60C7 /* keyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63DC47A714EE9AA8002B60C7 /* keyViewController.xib */; };
 /* End PBXBuildFile section */
@@ -35,6 +40,11 @@
 		639CB58B14EDBB85005AF3E5 /* KeysViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeysViewController.h; sourceTree = "<group>"; };
 		639CB58C14EDBB85005AF3E5 /* KeysViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeysViewController.m; sourceTree = "<group>"; };
 		639CB5AF14EE8F95005AF3E5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		63AE2F8F14EEE2AF001E2A18 /* bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bank.png; path = images/bank.png; sourceTree = "<group>"; };
+		63AE2F9014EEE2AF001E2A18 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = email.png; path = images/email.png; sourceTree = "<group>"; };
+		63AE2F9114EEE2AF001E2A18 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = game.png; path = images/game.png; sourceTree = "<group>"; };
+		63AE2F9214EEE2AF001E2A18 /* keychain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keychain.png; path = images/keychain.png; sourceTree = "<group>"; };
+		63AE2F9314EEE2AF001E2A18 /* shopping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shopping.png; path = images/shopping.png; sourceTree = "<group>"; };
 		63DC47A514EE9AA8002B60C7 /* keyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keyViewController.h; sourceTree = "<group>"; };
 		63DC47A614EE9AA8002B60C7 /* keyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = keyViewController.m; sourceTree = "<group>"; };
 		63DC47A714EE9AA8002B60C7 /* keyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = keyViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +113,11 @@
 		639CB57A14EDBB84005AF3E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				63AE2F8F14EEE2AF001E2A18 /* bank.png */,
+				63AE2F9014EEE2AF001E2A18 /* email.png */,
+				63AE2F9114EEE2AF001E2A18 /* game.png */,
+				63AE2F9214EEE2AF001E2A18 /* keychain.png */,
+				63AE2F9314EEE2AF001E2A18 /* shopping.png */,
 				639CB57B14EDBB84005AF3E5 /* Keychain-Info.plist */,
 				639CB57F14EDBB84005AF3E5 /* main.m */,
 				639CB58114EDBB84005AF3E5 /* Keychain-Prefix.pch */,
@@ -163,6 +178,11 @@
 			files = (
 				639CB58A14EDBB85005AF3E5 /* MainWindow.xib in Resources */,
 				63DC47A914EE9AA8002B60C7 /* keyViewController.xib in Resources */,
+				63AE2F9414EEE2AF001E2A18 /* bank.png in Resources */,
+				63AE2F9514EEE2AF001E2A18 /* email.png in Resources */,
+				63AE2F9614EEE2AF001E2A18 /* game.png in Resources */,
+				63AE2F9714EEE2AF001E2A18 /* keychain.png in Resources */,
+				63AE2F9814EEE2AF001E2A18 /* shopping.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

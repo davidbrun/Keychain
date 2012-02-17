@@ -63,7 +63,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
     
@@ -71,6 +71,14 @@
 	NSUInteger row = [indexPath row];
     NSManagedObject *computer = [[self allKeys] objectAtIndex:row];
 	cell.textLabel.text = [computer valueForKey:@"name"];
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 46)];
+    imgView.image = [UIImage imageNamed:@"bank.png"];
+    imgView.contentMode = UIViewContentModeCenter;
+    
+    [cell setValue:imgView forKey:@"imageView"];
+    
+    [imgView release];
     
     return cell;
 }

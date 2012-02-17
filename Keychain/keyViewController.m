@@ -45,6 +45,25 @@
     [passwordField resignFirstResponder];
 }
 
+- (IBAction)buttonGenerateTouch:(id)sender
+{
+    [passwordField setText:[self generateKeyOfLength:8]];
+}
+
+- (NSString *)generateKeyOfLength:(int)len
+{
+    NSString * alphabet = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    NSMutableString *s = [NSMutableString stringWithCapacity:len];
+    for (NSUInteger i = 0U; i < len; i++) {
+        u_int32_t r = arc4random() % [alphabet length];
+        unichar c = [alphabet characterAtIndex:r];
+        [s appendFormat:@"%C", c];
+    }
+    
+    [alphabet release];
+    return [NSString stringWithString:s];
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
