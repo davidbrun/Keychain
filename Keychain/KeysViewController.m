@@ -69,22 +69,17 @@
     
     // Configure the cell.
 	NSUInteger row = [indexPath row];
-    NSManagedObject *computer = [[self allKeys] objectAtIndex:row];
-	cell.textLabel.text = [computer valueForKey:@"name"];
-    
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 90, 46)];
-    imgView.image = [UIImage imageNamed:@"bank.png"];
-    imgView.contentMode = UIViewContentModeCenter;
-    
-    [cell setValue:imgView forKey:@"imageView"];
-    
-    [imgView release];
+    NSManagedObject *key = [[self allKeys] objectAtIndex:row];
+	cell.textLabel.text = [key valueForKey:@"name"];
+    // Add the image of the category
+    [cell.imageView setImage:[UIImage imageNamed:[key valueForKey:@"category"]]];
+    cell.imageView.contentMode = UIViewContentModeCenter;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    // Remove the key from the data base
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self removeKey:[[self allKeys] objectAtIndex:[indexPath row]]];
         [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -92,7 +87,7 @@
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animate
-{
+{   // Disable the add button when we are in edition mode, re-enable it when we are no more in edition mode
     [self.navigationItem.rightBarButtonItem setEnabled:!editing];
     [super setEditing:editing animated:animate];
 }
@@ -130,6 +125,7 @@
     [super dealloc];
 }
 
+// Get all the keys from the data base
 - (NSArray *)allKeys
 {
 	KeychainAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
@@ -151,6 +147,7 @@
 	return objects;
 }
 
+// Remove a key from the data base
 - (void)removeKey:(NSManagedObject *)key
 {
     KeychainAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];

@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface keyViewController : UIViewController
+@interface keyViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     UITextField *nameField;
     UITextField *urlField;
     UITextField *loginField;
     UITextField *passwordField;
+    UIPickerView *categoryPicker;
+    NSArray *pickerData;
     NSManagedObject *key;
 }
 
@@ -21,11 +23,13 @@
 @property (nonatomic,retain) IBOutlet UITextField *urlField;
 @property (nonatomic,retain) IBOutlet UITextField *loginField;
 @property (nonatomic,retain) IBOutlet UITextField *passwordField;
+@property (nonatomic,retain) IBOutlet UIPickerView *categoryPicker;
+@property(nonatomic , retain) NSArray *pickerData;
 @property (nonatomic,retain) NSManagedObject *key;
 
 - (IBAction)textFieldDoneEditing:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
 - (IBAction)buttonGenerateTouch:(id)sender;
-- (NSString *)generateKeyOfLength:(int)len;
+- (NSString *)generateKeyOfLength:(NSUInteger)length;
 
 @end
