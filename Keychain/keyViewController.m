@@ -25,9 +25,11 @@
     self.passwordField.text = [self.key valueForKey:@"password"];
     // Select the correct row of the picker
     NSUInteger index = [pickerData indexOfObject:[self.key valueForKey:@"category"]];
-    if (index != NSNotFound) {
-        [self.categoryPicker selectRow:index inComponent:0 animated:YES];
-    }
+    if (index != NSNotFound)
+        [self.categoryPicker selectRow:index inComponent:0 animated:NO];
+    else
+        [self.categoryPicker selectRow:0 inComponent:0 animated:NO];
+    
     // Put the name of the key as a title
     [self.navigationItem setTitle:[self.key valueForKey:@"name"]];
 }
