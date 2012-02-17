@@ -10,7 +10,8 @@
 
 @class keyViewController;
 
-@interface KeysViewController : UITableViewController {
+@interface KeysViewController : UITableViewController
+{
 	keyViewController *keyViewController;
 }
 

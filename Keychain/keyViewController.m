@@ -14,8 +14,8 @@
 @synthesize key;
 
 
-
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated
+{
 	self.nameField.text = [self.key valueForKey:@"name"];
 	self.urlField.text = [self.key valueForKey:@"url"];
     self.loginField.text = [self.key valueForKey:@"login"];
@@ -24,8 +24,8 @@
     [self.navigationItem setValue:[self.key valueForKey:@"name"] forKey:@"title"];
 }
 
-
--(void)viewWillDisappear:(BOOL)animated{
+-(void)viewWillDisappear:(BOOL)animated
+{
 	[self.key setValue:self.nameField.text forKey:@"name"];
     [self.key setValue:self.urlField.text forKey:@"url"];
     [self.key setValue:self.loginField.text forKey:@"login"];
@@ -45,18 +45,6 @@
     [passwordField resignFirstResponder];
 }
 
-
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -73,7 +61,8 @@
     // Do any additional setup after loading the view from its nib.
 }
 */
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -84,7 +73,8 @@
 }
 
 
-- (void)dealloc {
+- (void)dealloc
+{
 	[nameField release];
 	[urlField release];
     [loginField release];
@@ -92,6 +82,7 @@
 	[key release];
     [super dealloc];
 }
+
 /*
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

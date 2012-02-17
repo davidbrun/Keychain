@@ -3,7 +3,7 @@
     <entity name="Key" representedClassName="NSManagedObject">
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="login" optional="YES" attributeType="String"/>
-        <attribute name="name" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>

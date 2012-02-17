@@ -8,14 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface keyViewController : UIViewController {
-
+@interface keyViewController : UIViewController
+{
     UITextField *nameField;
     UITextField *urlField;
     UITextField *loginField;
     UITextField *passwordField;
     NSManagedObject *key;
-
 }
 
 @property (nonatomic,retain) IBOutlet UITextField *nameField;

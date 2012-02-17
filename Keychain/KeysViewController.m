@@ -24,31 +24,19 @@
 	[self.navigationController pushViewController:self.keyViewController animated:YES];
 }
 
-
-
 - (IBAction)createKey:(id)sender
 {
 	KeychainAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
 	NSManagedObjectContext *context = [appDelegate managedObjectContext];
 	NSManagedObject *key = [NSEntityDescription insertNewObjectForEntityForName:@"Key" inManagedObjectContext:context];
-    [key setValue:@"Nouvelle clé" forKey:@"name"];
     [self pushKeyViewController:key];
-    //[self refreshTableView];
 }
-
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Set up the edit and add buttons.
+    // Set up the edit button
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-/*
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createKey)];
-    //@selector(insertNewObject)
-    //[super ta
-    self.navigationItem.rightBarButtonItem = addButton;
-    [addButton release];*/
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -56,29 +44,6 @@
 	[self refreshTableView];
     [super viewWillAppear:animated];
 }
-/*
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-*/
-/*
- // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
- */
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -100,7 +65,7 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
-
+    
     // Configure the cell.
 	NSUInteger row = [indexPath row];
     NSManagedObject *computer = [[self allKeys] objectAtIndex:row];
@@ -108,15 +73,6 @@
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -126,6 +82,11 @@
     }
 }
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animate
+{
+    [self.navigationItem.rightBarButtonItem setEnabled:!editing];
+    [super setEditing:editing animated:animate];
+}
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -150,7 +111,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-
+    
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }
@@ -164,21 +125,20 @@
 {
 	KeychainAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     NSManagedObjectContext *context = [appDelegate managedObjectContext];
-	
 	NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Key" inManagedObjectContext:context];
 	
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
 	[request setEntity:entityDescription];
-    
+    // Sort the objects
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     [sortDescriptor release];
 	
 	NSError *error;
 	NSArray *objects =[context executeFetchRequest:request error:&error];
-	if (objects == nil ){
-		NSLog(@"There was an error");
-	}
+	if (objects == nil )
+		NSLog(@"Error when trying to reach the database");
+	
 	return objects;
 }
 
@@ -193,6 +153,39 @@
 {
     [self.tableView reloadData];
 }
+
+/*
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+	[super viewDidDisappear:animated];
+}
+*/
+/*
+ // Override to allow orientations other than the default portrait orientation.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	// Return YES for supported orientations.
+	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+ */
+
+/*
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+*/
 
 /*
 // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed. 

@@ -65,13 +65,6 @@
     [self saveContext];
 }
 
-/*
-- (void)awakeFromNib
-{
-    KeysViewController *rootViewController = (KeysViewController *)[self.navigationController topViewController];
-    rootViewController.managedObjectContext = self.managedObjectContext;
-}
-*/
 - (void)saveContext
 {
     NSError *error = nil;
